@@ -10,6 +10,7 @@ export default {
           raised: 'rgb(var(--color-surface-raised) / <alpha-value>)',
           border: 'rgb(var(--color-surface-border) / <alpha-value>)'
         },
+        field: 'rgb(var(--color-field-bg) / <alpha-value>)',
         text: {
           primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
           secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',

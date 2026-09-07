@@ -2,7 +2,7 @@ import { useState, FormEvent } from 'react'
 import Modal from './Modal'
 
 const inputClass =
-  'w-full bg-surface-raised border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50'
+  'w-full bg-field border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50'
 
 export default function ChangePasswordModal({ onClose }: { onClose: () => void }) {
   const [senhaAtual, setSenhaAtual] = useState('')

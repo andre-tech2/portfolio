@@ -6,7 +6,7 @@ const PAPEL_LABEL: Record<Papel, string> = { visualizar: 'Visualizar', editar: '
 const PAPEIS: Papel[] = ['visualizar', 'editar', 'gerenciar']
 
 const inputClass =
-  'w-full bg-surface-raised border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary placeholder:text-text-muted mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50'
+  'w-full bg-field border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary placeholder:text-text-muted mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50'
 
 type CreateForm = { nome: string; email: string; senha: string; papel: Papel }
 type EditForm = { id: number; nome: string; papel: Papel; ativo: boolean }

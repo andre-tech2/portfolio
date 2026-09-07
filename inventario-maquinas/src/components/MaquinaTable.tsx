@@ -252,7 +252,7 @@ export default function MaquinaTable({
         value={busca}
         onChange={(e) => setBusca(e.target.value)}
         placeholder="Buscar por patrimônio, modelo ou localização…"
-        className="w-full max-w-sm bg-surface-raised border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/50"
+        className="w-full max-w-sm bg-field border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/50"
       />
 
       <div className="glass rounded-xl overflow-hidden overflow-x-auto">
@@ -356,7 +356,7 @@ export default function MaquinaTable({
                 rows={2}
                 value={motivo}
                 onChange={(e) => setMotivo(e.target.value)}
-                className="w-full bg-surface-raised border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
+                className="w-full bg-field border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
               />
             </div>
             {deleteError && <p className="text-xs text-danger-text font-medium">{deleteError}</p>}
@@ -411,7 +411,7 @@ export default function MaquinaTable({
                       autoFocus
                       value={vendaDataForm}
                       onChange={(e) => setVendaDataForm(e.target.value)}
-                      className="w-full bg-surface-raised border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
+                      className="w-full bg-field border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
                     />
                   </div>
                   <div>
@@ -419,7 +419,7 @@ export default function MaquinaTable({
                     <input
                       value={vendaCompradorForm}
                       onChange={(e) => setVendaCompradorForm(e.target.value)}
-                      className="w-full bg-surface-raised border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
+                      className="w-full bg-field border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
                     />
                   </div>
                 </div>

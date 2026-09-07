@@ -46,7 +46,7 @@ export default function LoginScreen({ onLogin }: { onLogin: (usuario: Usuario) =
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-surface-raised border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
+              className="w-full bg-field border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
             />
           </div>
           <div>
@@ -56,7 +56,7 @@ export default function LoginScreen({ onLogin }: { onLogin: (usuario: Usuario) =
               type="password"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
-              className="w-full bg-surface-raised border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
+              className="w-full bg-field border border-surface-border/15 rounded-md px-3 py-2 text-sm text-text-primary mt-1 focus:outline-none focus:ring-2 focus:ring-accent/50"
             />
           </div>
 

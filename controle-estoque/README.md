@@ -25,6 +25,24 @@ mínimo e cada retirada vinculada a um número de chamado. Roda **100% no navega
 - Gestão de usuários e limiar do alerta "Baixo" configurável
 - Modo demonstração: dados de exemplo pré-carregados e um botão para restaurá-los a qualquer momento
 
+## Por que esse projeto existe (e as decisões por trás dele)
+
+O problema real: controle de estoque de equipamentos de TI em duas sedes, onde cada retirada precisa estar
+amarrada a um chamado — sem isso, uma auditoria não consegue explicar por que o estoque de um item caiu, e a
+reposição vira "achismo" em vez de dado. Algumas decisões de design vêm direto dessa dor:
+
+- **Movimentações são sempre em lote, vinculadas a um único chamado/colaborador.** Na prática, uma retirada
+  raramente é de um item só (ex: mouse + teclado + headset pro mesmo posto de trabalho) — registrar item por item
+  era mais lento e mais fácil de esquecer um item no meio do processo.
+- **O lote inteiro é validado contra o estoque disponível antes de aplicar qualquer alteração — tudo ou nada.**
+  Aplicar parte de um lote e travar no meio deixaria o estoque num estado inconsistente sem ninguém perceber até
+  o próximo balanço físico.
+- **Cancelamento em vez de exclusão, com motivo obrigatório.** Apagar uma movimentação errada apagaria também o
+  rastro de que ela existiu — cancelar mantém o histórico completo (o que foi feito, e por que foi desfeito).
+- **O limiar de estoque "baixo" é uma porcentagem configurável em tela, não um número fixo no código.** O que
+  conta como "estoque baixo" muda conforme o time cresce ou o padrão de consumo muda — travar esse valor no
+  código significaria abrir uma tarefa de desenvolvimento toda vez que a operação precisasse ajustá-lo.
+
 ## Stack técnica
 
 - **React 18 + TypeScript + Vite**

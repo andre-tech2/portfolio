@@ -24,6 +24,24 @@ persistido no IndexedDB do visitante — sem servidor, sem backend, sem dados re
 - Modo demonstração: dados de exemplo pré-carregados e um botão para restaurá-los a qualquer momento
 - Tela "Visão Geral" com KPIs e gráficos (por estado, por localização, idade do parque)
 
+## Por que esse projeto existe (e as decisões por trás dele)
+
+O problema real: controle de parque de máquinas de TI feito em planilha compartilhada não tem trilha do que saiu
+e por quê, nem visão rápida de quanto do parque está parado vs. em uso. Algumas decisões de design vêm direto
+dessa dor:
+
+- **Exclusão sempre pede um motivo e fica registrada em "Histórico de remoções"**, em vez de simplesmente sumir
+  da tabela. Quando alguém pergunta "cadê a máquina X", a resposta precisa estar no sistema, não na memória de
+  quem excluiu.
+- **"Máquinas Novas" e "Máquinas Antigas" são telas separadas, não um único status.** O ciclo de vida é diferente:
+  máquina nova só entra/sai de estoque; máquina antiga pode estar em atuação, parada aguardando triagem, ou
+  vendida (com comprador e data). Misturar os dois estados na mesma tela escondia informação em vez de organizar.
+- **Três papéis de acesso (visualizar / editar / gerenciar).** É uma ferramenta usada por várias pessoas do time,
+  mas nem todo mundo deveria poder excluir um registro ou criar outro usuário — menor privilégio possível por
+  função, não "todo mundo é admin" porque é mais rápido de configurar.
+- **Importação/exportação de planilha em vez de abandonar o Excel de uma vez.** O time já usava planilha para
+  algumas conferências pontuais; forçar migração total de imediato geraria mais atrito do que valor.
+
 ## Testes
 
 Suíte automatizada com [Vitest](https://vitest.dev/), rodada no CI a cada push (bloqueia o deploy se falhar):

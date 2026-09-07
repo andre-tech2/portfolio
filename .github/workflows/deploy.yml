@@ -40,6 +40,10 @@ jobs:
         working-directory: insight-sd
         run: npm install
 
+      - name: Rodar testes — Insight SD
+        working-directory: insight-sd
+        run: npm test
+
       - name: Build — Insight SD
         working-directory: insight-sd
         run: npm run build

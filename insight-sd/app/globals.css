@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  /* Page shell — conteúdo claro, cromado (cabeçalho) fica em roxo/índigo à parte */
+  --page-plane: #ffffff;
+  --page-plane-2: #f7f8fa;
+  --surface-1: #f7f8fa;
+  --surface-2: #eef0f4;
+  --surface-glass: rgba(247, 248, 250, 0.75);
+
+  --text-primary: #14151a;
+  --text-secondary: #53565f;
+  --text-muted: #84878f;
+
+  --gridline: #e2e4ea;
+  --baseline: #d5d8de;
+  --border-hairline: rgba(20, 21, 26, 0.1);
+
+  /* Paleta categórica (validada, ordem fixa — skill dataviz, passo dark) */
+  --series-1: #3987e5; /* blue */
+  --series-2: #d95926; /* orange */
+  --series-3: #199e70; /* aqua */
+  --series-4: #c98500; /* yellow */
+  --series-5: #d55181; /* magenta */
+  --series-6: #008300; /* green */
+  --series-7: #9085e9; /* violet */
+  --series-8: #e66767; /* red */
+
+  --status-good: #0b8a3a;
+  --status-warning: #b45309;
+  --status-serious: #c2410c;
+  --status-critical: #b91c1c;
+
+  --accent-glow: #461cdc;
+  --accent-glow-2: #6bff50;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page-plane: #05060a;
+  --page-plane-2: #0a0c14;
+  --surface-1: #12141c;
+  --surface-2: #171a24;
+  --surface-glass: rgba(23, 26, 36, 0.6);
+
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+
+  --gridline: #2c2c2a;
+  --baseline: #383835;
+  --border-hairline: rgba(255, 255, 255, 0.1);
+
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(70, 28, 220, 0.2), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(107, 255, 80, 0.08), transparent 55%),
+    var(--page-plane);
+  color: var(--text-primary);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: rgba(70, 28, 220, 0.35);
+}
+
+.glass-card {
+  background: var(--surface-glass);
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.text-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+  }
+}

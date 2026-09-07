@@ -36,12 +36,24 @@ jobs:
         working-directory: inventario-maquinas
         run: npm run build
 
+      - name: Instalar dependências — Insight SD
+        working-directory: insight-sd
+        run: npm install
+
+      - name: Build — Insight SD
+        working-directory: insight-sd
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /portfolio/insight-sd
+
       - name: Montar site
         run: |
           mkdir -p _site
           cp -r web/. _site/
           mkdir -p _site/inventario-maquinas
           cp -r inventario-maquinas/dist/. _site/inventario-maquinas/
+          mkdir -p _site/insight-sd
+          cp -r insight-sd/out/. _site/insight-sd/
 
       - uses: actions/upload-pages-artifact@v3
         with:

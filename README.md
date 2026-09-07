@@ -13,6 +13,7 @@ empresa ou de terceiros aparece neste repositório.
 | Projeto | Descrição | Stack | Demo |
 | --- | --- | --- | --- |
 | [Inventário de Máquinas](./inventario-maquinas) | Controle de parque de máquinas com papéis de usuário, importação/exportação de planilha e trilha de auditoria — SQLite rodando 100% no navegador. | React, TypeScript, Tailwind, sql.js | [abrir](https://andre-tech2.github.io/portfolio/inventario-maquinas/) |
+| [Insight SD](./insight-sd) | Dashboard de análise de Service Desk estilo Power BI — SLA, ranking de agentes, backlog, recomendações automáticas por regras. Dados de demonstração gerados na hora. | Next.js, React, TypeScript, Recharts | [abrir](https://andre-tech2.github.io/portfolio/insight-sd/) |
 
 Novos projetos serão adicionados como novas pastas neste mesmo repositório.
 
@@ -22,6 +23,7 @@ Novos projetos serão adicionados como novas pastas neste mesmo repositório.
 portfolio/
 ├── web/                    # landing page do portfólio (GitHub Pages)
 ├── inventario-maquinas/    # projeto 1: inventário de máquinas
+├── insight-sd/              # projeto 2: dashboard de Service Desk
 ├── .github/workflows/      # build + deploy automático para GitHub Pages
 ```
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Sidebar, { Page } from './components/Sidebar'
 import LoginScreen from './components/LoginScreen'
 import ChangePasswordModal from './components/ChangePasswordModal'
+import Dashboard from './pages/Dashboard'
 import MaquinasNovas from './pages/MaquinasNovas'
 import MaquinasAntigas from './pages/MaquinasAntigas'
 import Configuracoes from './pages/Configuracoes'
@@ -21,7 +22,7 @@ export default function App() {
   const [authChecked, setAuthChecked] = useState(false)
   const [usuario, setUsuario] = useState<Usuario | null>(null)
   const [trocarSenhaOpen, setTrocarSenhaOpen] = useState(false)
-  const [page, setPage] = useState<Page>('novas')
+  const [page, setPage] = useState<Page>('dashboard')
   const [refreshKey, setRefreshKey] = useState(0)
   const [totalNovas, setTotalNovas] = useState(0)
   const [totalAntigas, setTotalAntigas] = useState(0)
@@ -36,7 +37,7 @@ export default function App() {
   async function handleLogout() {
     await window.api.auth.logout()
     setUsuario(null)
-    setPage('novas')
+    setPage('dashboard')
   }
 
   if (!authChecked) {
@@ -67,6 +68,15 @@ export default function App() {
         onTrocarSenha={() => setTrocarSenhaOpen(true)}
       />
       <main className="relative z-10 flex-1 overflow-y-auto">
+        {page === 'dashboard' && (
+          <Dashboard
+            refreshKey={refreshKey}
+            onCounts={(n, a) => {
+              setTotalNovas(n)
+              setTotalAntigas(a)
+            }}
+          />
+        )}
         {page === 'novas' && (
           <MaquinasNovas refreshKey={refreshKey} onCountChange={setTotalNovas} papel={usuario.papel} usuarioNome={usuario.nome} />
         )}

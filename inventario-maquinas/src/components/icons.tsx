@@ -10,6 +10,15 @@ export function IconBoxNew({ className }: IconProps) {
   )
 }
 
+export function IconChart({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className}>
+      <path d="M4 20V10M11 20V4M18 20v-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 20h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 export function IconClock({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className}>

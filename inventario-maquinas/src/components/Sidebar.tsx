@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import Logo from './Logo'
-import { IconBoxNew, IconClock, IconGear, IconSun, IconMoon, IconUsers, IconKey, IconLogout, IconGithub } from './icons'
+import { IconBoxNew, IconChart, IconClock, IconGear, IconSun, IconMoon, IconUsers, IconKey, IconLogout, IconGithub } from './icons'
 import { getTheme, setTheme } from '../lib/theme'
 
-export type Page = 'novas' | 'antigas' | 'configuracoes' | 'usuarios'
+export type Page = 'dashboard' | 'novas' | 'antigas' | 'configuracoes' | 'usuarios'
 
 const PAPEL_LABEL: Record<Papel, string> = { visualizar: 'Visualizar', editar: 'Editar', gerenciar: 'Gerenciar tudo' }
 
 const baseItems: { page: Page; label: string; icon: (p: { className?: string }) => JSX.Element }[] = [
+  { page: 'dashboard', label: 'Visão Geral', icon: IconChart },
   { page: 'novas', label: 'Máquinas Novas', icon: IconBoxNew },
   { page: 'antigas', label: 'Máquinas Antigas', icon: IconClock }
 ]

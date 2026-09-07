@@ -6,6 +6,8 @@ persistido no IndexedDB do visitante — sem servidor, sem backend, sem dados re
 
 **[Ver demonstração ao vivo →](https://andre-tech2.github.io/portfolio/inventario-maquinas/)**
 
+![Demonstração do app](../web/demo.gif)
+
 > "NovaTech" é uma empresa fictícia criada só para este portfólio. O sistema foi originalmente desenvolvido como
 > uma aplicação desktop (Electron) para uso interno real e depois adaptado para rodar 100% no navegador, com dados
 > e marca fictícios, para poder ser demonstrado publicamente.

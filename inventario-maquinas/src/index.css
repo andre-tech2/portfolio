@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 246 247 251;
+  --color-surface: 255 255 255;
+  --color-surface-raised: 255 255 255;
+  --color-surface-border: 15 23 42;
+  --color-text-primary: 15 17 26;
+  --color-text-secondary: 71 76 94;
+  --color-text-muted: 122 128 145;
+  --color-ok-text: 5 122 85;
+  --color-warn-text: 146 90 6;
+  --color-danger-text: 190 30 45;
+  --scrollbar-thumb: #cbd0dc;
+  --surface-alpha: 0.72;
+  --surface-raised-alpha: 0.9;
+  --surface-border-alpha: 0.08;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: 6 7 13;
+  --color-surface: 255 255 255;
+  --color-surface-raised: 255 255 255;
+  --color-surface-border: 255 255 255;
+  --color-text-primary: 240 242 250;
+  --color-text-secondary: 163 169 191;
+  --color-text-muted: 110 116 138;
+  --color-ok-text: 74 222 158;
+  --color-warn-text: 251 191 36;
+  --color-danger-text: 248 113 113;
+  --scrollbar-thumb: #2a2d3d;
+  --surface-alpha: 0.05;
+  --surface-raised-alpha: 0.09;
+  --surface-border-alpha: 0.1;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-text-primary));
+  position: relative;
+}
+
+/* Fundo em vidro: blobs de gradiente desfocados fixos atrás do conteúdo */
+.app-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.app-backdrop span {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.35;
+}
+:root:not([data-theme='dark']) .app-backdrop span {
+  opacity: 0.18;
+}
+.app-backdrop .blob-1 {
+  width: 46rem;
+  height: 46rem;
+  top: -18rem;
+  left: -12rem;
+  background: #22d3ee;
+}
+.app-backdrop .blob-2 {
+  width: 40rem;
+  height: 40rem;
+  bottom: -16rem;
+  right: -10rem;
+  background: #a855f7;
+}
+.app-backdrop .blob-3 {
+  width: 30rem;
+  height: 30rem;
+  top: 30%;
+  left: 45%;
+  background: #6366f1;
+  opacity: 0.18;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.glass {
+  background: rgb(var(--color-surface) / var(--surface-alpha));
+  border: 1px solid rgb(var(--color-surface-border) / var(--surface-border-alpha));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.glass-raised {
+  background: rgb(var(--color-surface-raised) / var(--surface-raised-alpha));
+  border: 1px solid rgb(var(--color-surface-border) / var(--surface-border-alpha));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.brand-text {
+  background: linear-gradient(115deg, #22d3ee, #6366f1 55%, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+.badge-entrada {
+  @apply bg-ok/15 text-ok-text;
+}
+.badge-saida {
+  @apply bg-warn/15 text-warn-text;
+}
+.badge-em_atuacao {
+  @apply bg-ok/15 text-ok-text;
+}
+.badge-parada {
+  @apply bg-warn/15 text-warn-text;
+}
+.badge-venda {
+  @apply bg-danger/15 text-danger-text;
+}

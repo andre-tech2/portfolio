@@ -286,6 +286,41 @@
           width: 140px;
         }
       }
+      .certs-title {
+        margin: 3rem 0 1.25rem;
+        font-size: 1.15rem;
+        font-weight: 800;
+      }
+      .certs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+        gap: 1rem;
+      }
+      .cert-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        padding: 1.1rem 1.25rem;
+      }
+      .cert-card h3 {
+        font-size: 0.92rem;
+        margin: 0 0 0.35rem;
+        line-height: 1.35;
+      }
+      .cert-card .meta {
+        font-size: 0.78rem;
+        color: #a3a9bf;
+        margin: 0 0 0.75rem;
+      }
+      .cert-card a {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #22d3ee;
+        text-decoration: none;
+      }
+      .cert-card a:hover {
+        text-decoration: underline;
+      }
       footer {
         position: relative;
         z-index: 1;
@@ -426,6 +461,42 @@
           <div class="about-links">
             <a href="https://www.linkedin.com/in/andrelsandre" target="_blank" rel="noreferrer">LinkedIn ↗</a>
             <a class="ghost" href="https://github.com/andre-tech2" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div style="grid-column: 1 / -1">
+          <h2 class="certs-title">Certificados</h2>
+          <div class="certs">
+            <div class="cert-card">
+              <h3>Intensivo BI + IA</h3>
+              <p class="meta">Curso intensivo</p>
+              <a href="./certificados/intensivo-bi-ia.pdf" target="_blank" rel="noreferrer">Ver certificado →</a>
+            </div>
+            <div class="cert-card">
+              <h3>Power BI: análises avançadas com DAX</h3>
+              <p class="meta">Alura · 8 horas</p>
+              <a href="./certificados/power-bi-analises-avancadas-dax.pdf" target="_blank" rel="noreferrer">Ver certificado →</a>
+            </div>
+            <div class="cert-card">
+              <h3>Power BI: criação, publicação e gerenciamento de relatórios e dashboards</h3>
+              <p class="meta">Alura · 8 horas</p>
+              <a href="./certificados/power-bi-criacao-publicacao-gerenciamento.pdf" target="_blank" rel="noreferrer">Ver certificado →</a>
+            </div>
+            <div class="cert-card">
+              <h3>Power BI Desktop: realizando ETL no Power Query</h3>
+              <p class="meta">LinkedIn Learning</p>
+              <a href="./certificados/power-bi-desktop-etl-power-query.pdf" target="_blank" rel="noreferrer">Ver certificado →</a>
+            </div>
+            <div class="cert-card">
+              <h3>Looker Studio: visualização de dados</h3>
+              <p class="meta">LinkedIn Learning</p>
+              <a href="./certificados/looker-studio-visualizacao-de-dados.pdf" target="_blank" rel="noreferrer">Ver certificado →</a>
+            </div>
+            <div class="cert-card">
+              <h3>Power BI: criando relatórios com auxílio de IA</h3>
+              <p class="meta">Alura · 10 horas</p>
+              <a href="./certificados/power-bi-relatorios-com-ia.pdf" target="_blank" rel="noreferrer">Ver certificado →</a>
+            </div>
           </div>
         </div>
       </section>

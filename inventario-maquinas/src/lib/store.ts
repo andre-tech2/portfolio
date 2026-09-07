@@ -80,7 +80,9 @@ function runMigrations() {
 
 export async function initEngine(): Promise<{ isNovo: boolean }> {
   if (!SQL) {
-    SQL = await initSqlJs({ locateFile: () => sqlWasmUrl })
+    // No navegador, o wasm precisa ser buscado pela URL resolvida pelo Vite (respeitando o `base`).
+    // Em Node (testes), sql.js já sabe ler o arquivo direto do disco ao lado de sql-wasm.js.
+    SQL = typeof window === 'undefined' ? await initSqlJs() : await initSqlJs({ locateFile: () => sqlWasmUrl })
   }
   const blob = await loadBlob()
   const isNovo = !blob

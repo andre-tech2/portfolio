@@ -27,6 +27,10 @@ Cada projeto é independente (seu próprio `package.json`, dependências e build
 [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) builda cada um e publica o resultado em um
 subcaminho do GitHub Pages a cada push na branch `main`.
 
+## Autor
+
+André — [LinkedIn](https://www.linkedin.com/in/andrelsandre) · [GitHub](https://github.com/andre-tech2)
+
 ## Licença
 
 MIT — veja [LICENSE](./LICENSE).

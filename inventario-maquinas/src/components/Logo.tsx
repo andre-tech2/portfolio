@@ -1,19 +1,29 @@
 export default function Logo({ className = 'w-8 h-8' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 40 40" className={`${className} shrink-0`} xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="novatech-logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#22D3EE" />
-          <stop offset="55%" stopColor="#6366F1" />
-          <stop offset="100%" stopColor="#A855F7" />
-        </linearGradient>
-      </defs>
-      <rect width="40" height="40" rx="10" fill="url(#novatech-logo-grad)" />
-      <path
-        d="M12 28V12h3.6l8.8 11.2V12H28v16h-3.6l-8.8-11.2V28H12z"
-        fill="white"
-        fillOpacity="0.95"
+    <svg viewBox="0 0 100 100" className={`${className} shrink-0`} xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" rx="22" fill="#0B1F3B" />
+      <ellipse
+        cx="50"
+        cy="50"
+        rx="40"
+        ry="19"
+        transform="rotate(-20 50 50)"
+        fill="none"
+        stroke="#FFFFFF"
+        strokeWidth="3"
       />
+      <text
+        x="50"
+        y="67"
+        textAnchor="middle"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontWeight="700"
+        fill="#FFFFFF"
+      >
+        <tspan fontSize="46">A</tspan>
+        <tspan fontSize="28" dy="-6">&amp;</tspan>
+        <tspan fontSize="46" dy="6">A</tspan>
+      </text>
     </svg>
   )
 }

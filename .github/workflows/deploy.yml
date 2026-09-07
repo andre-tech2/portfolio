@@ -28,6 +28,10 @@ jobs:
         working-directory: inventario-maquinas
         run: npm install
 
+      - name: Rodar testes — Inventário de Máquinas
+        working-directory: inventario-maquinas
+        run: npm test
+
       - name: Build — Inventário de Máquinas
         working-directory: inventario-maquinas
         run: npm run build

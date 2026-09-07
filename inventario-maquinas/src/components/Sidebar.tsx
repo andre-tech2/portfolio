@@ -1,6 +1,18 @@
 import { useState } from 'react'
 import Logo from './Logo'
-import { IconBoxNew, IconChart, IconClock, IconGear, IconSun, IconMoon, IconUsers, IconKey, IconLogout, IconGithub } from './icons'
+import {
+  IconBoxNew,
+  IconChart,
+  IconClock,
+  IconGear,
+  IconSun,
+  IconMoon,
+  IconUsers,
+  IconKey,
+  IconLogout,
+  IconGithub,
+  IconLinkedin
+} from './icons'
 import { getTheme, setTheme } from '../lib/theme'
 
 export type Page = 'dashboard' | 'novas' | 'antigas' | 'configuracoes' | 'usuarios'
@@ -108,15 +120,29 @@ export default function Sidebar({
         </button>
       </div>
 
-      <a
-        href="https://github.com/andre-tech2/portfolio"
-        target="_blank"
-        rel="noreferrer"
-        className="flex items-center gap-2 px-5 py-4 border-t border-surface-border/10 text-[11px] text-text-muted hover:text-text-primary transition-colors"
-      >
-        <IconGithub className="w-3.5 h-3.5" />
-        Projeto de portfólio · ver código
-      </a>
+      <div className="shrink-0 px-5 py-4 border-t border-surface-border/10 space-y-2">
+        <p className="text-[11px] text-text-muted">Projeto de portfólio de André</p>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://www.linkedin.com/in/andrelsandre"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 text-[11px] text-text-secondary hover:text-text-primary transition-colors"
+          >
+            <IconLinkedin className="w-3.5 h-3.5" />
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/andre-tech2/portfolio"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 text-[11px] text-text-secondary hover:text-text-primary transition-colors"
+          >
+            <IconGithub className="w-3.5 h-3.5" />
+            Ver código
+          </a>
+        </div>
+      </div>
     </aside>
   )
 }

@@ -150,6 +150,14 @@ export function IconLogout({ className }: IconProps) {
   )
 }
 
+export function IconLinkedin({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M6.94 5a2 2 0 11-4-.01A2 2 0 016.94 5zM3.25 8.75h3.5V21h-3.5V8.75zM9.5 8.75h3.35v1.68h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.35V21h-3.5v-6.35c0-1.51-.03-3.46-2.1-3.46-2.1 0-2.42 1.64-2.42 3.35V21H9.5V8.75z" />
+    </svg>
+  )
+}
+
 export function IconGithub({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>

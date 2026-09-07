@@ -20,6 +20,21 @@ persistido no IndexedDB do visitante — sem servidor, sem backend, sem dados re
 - Gestão de usuários (criar, editar papel/status, redefinir senha)
 - Modo claro/escuro com visual "vidro" (glassmorphism)
 - Modo demonstração: dados de exemplo pré-carregados e um botão para restaurá-los a qualquer momento
+- Tela "Visão Geral" com KPIs e gráficos (por estado, por localização, idade do parque)
+
+## Testes
+
+Suíte automatizada com [Vitest](https://vitest.dev/), rodada no CI a cada push (bloqueia o deploy se falhar):
+
+```bash
+npm test
+```
+
+- **`lib/idade.test.ts`** — cálculo de idade a partir da data de entrada (dias/meses/anos, datas inválidas/futuras)
+- **`lib/store.test.ts`** — regras de negócio: validação de senha, e-mail duplicado, patrimônio duplicado, exclusão
+  com motivo/trilha de auditoria, mover para "Antigas" (inclui venda), regra de não remover o último usuário
+  "gerenciar tudo", upsert de importação
+- **`components/LoginScreen.test.tsx`** — smoke test de UI (React Testing Library) com a camada de dados mockada
 
 ## Stack técnica
 

@@ -193,6 +193,99 @@
         transform: none;
         border-color: rgba(255, 255, 255, 0.1);
       }
+      .tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .tab-btn {
+        appearance: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #a3a9bf;
+        font-family: inherit;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0.75rem 0.25rem;
+        margin-bottom: -1px;
+        border-bottom: 2px solid transparent;
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
+      .tab-btn + .tab-btn {
+        margin-left: 1.25rem;
+      }
+      .tab-btn:hover {
+        color: #f0f2fa;
+      }
+      .tab-btn.active {
+        color: #f0f2fa;
+        border-bottom-color: #6366f1;
+      }
+      .about {
+        display: grid;
+        grid-template-columns: minmax(160px, 220px) 1fr;
+        gap: 2.5rem;
+        align-items: start;
+      }
+      .about-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .about .role {
+        color: #22d3ee;
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin: 0.25rem 0 1.25rem;
+      }
+      .about .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 1.5rem 0;
+      }
+      .about .stack span {
+        font-size: 0.7rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        padding: 0.25rem 0.7rem;
+        color: #d5d8e6;
+      }
+      .about-links {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      .about-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #0b0d17;
+        background: linear-gradient(115deg, #22d3ee, #6366f1 55%, #a855f7);
+        padding: 0.55rem 1.1rem;
+        border-radius: 999px;
+        text-decoration: none;
+      }
+      .about-links a.ghost {
+        color: #f0f2fa;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+      @media (max-width: 620px) {
+        .about {
+          grid-template-columns: 1fr;
+        }
+        .about-photo {
+          width: 140px;
+        }
+      }
       footer {
         position: relative;
         z-index: 1;
@@ -220,6 +313,12 @@
         <span class="brand">NOVATECH</span>
       </header>
 
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="projetos" type="button">Projetos</button>
+        <button class="tab-btn" data-tab="sobre" type="button">Sobre mim</button>
+      </div>
+
+      <section id="panel-projetos" class="panel">
       <h1>Portfólio de projetos <span>NovaTech</span></h1>
       <p class="lead">
         Uma coleção de sistemas completos, construídos do zero e publicados aqui como demonstração prática de
@@ -293,6 +392,43 @@
           </div>
         </div>
       </div>
+      </section>
+
+      <section id="panel-sobre" class="panel about" hidden>
+        <img class="about-photo" src="./andre-andre.png" alt="Foto de André André" />
+        <div>
+          <span class="tag">Sobre mim</span>
+          <h1>André André</h1>
+          <p class="role">Analista de Suporte Pleno · Matera</p>
+          <p class="lead">
+            Engenheiro de Computação com mais de 11 anos de experiência em TI, atuando em ambientes corporativos
+            críticos com forte atuação também em Business Intelligence. Especialista em suporte técnico avançado,
+            infraestrutura (Windows/Linux, Active Directory) e gestão de incidentes — nos últimos anos ampliei a
+            atuação para dados e BI, construindo dashboards, KPIs e pipelines ETL com SQL, Power BI e Looker
+            Studio. Hoje busco unir essa bagagem técnica com a paixão por transformar dados em insights
+            estratégicos para o negócio.
+          </p>
+          <div class="stack">
+            <span>SQL</span>
+            <span>Power BI</span>
+            <span>Looker Studio</span>
+            <span>ETL</span>
+            <span>Windows Server</span>
+            <span>Linux</span>
+            <span>Active Directory</span>
+            <span>PowerShell</span>
+            <span>Jira</span>
+            <span>Freshservice</span>
+          </div>
+          <p class="lead" style="font-size: 0.9rem">
+            Formação: Engenharia de Computação — Wyden Educacional
+          </p>
+          <div class="about-links">
+            <a href="https://www.linkedin.com/in/andrelsandre" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="ghost" href="https://github.com/andre-tech2" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       Projeto de portfólio pessoal de André André · dados e nomes de empresa fictícios ·
@@ -301,6 +437,14 @@
       <a href="https://github.com/andre-tech2/portfolio" target="_blank" rel="noreferrer">código no GitHub</a>
     </footer>
     <script>
+      document.querySelectorAll('.tab-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'))
+          btn.classList.add('active')
+          document.querySelectorAll('.panel').forEach((p) => (p.hidden = true))
+          document.getElementById('panel-' + btn.dataset.tab).hidden = false
+        })
+      })
       console.info(
         '%cPortfólio NovaTech\n%cDesenvolvido por André André — https://www.linkedin.com/in/andrelsandre',
         'font-weight:bold;font-size:14px',

@@ -6,8 +6,6 @@ empresa ou de terceiros aparece neste repositório.
 
 **[Ver o portfólio publicado →](https://andre-tech2.github.io/portfolio/)**
 
-![Demonstração do Inventário de Máquinas NovaTech](web/demo.gif)
-
 ## Projetos
 
 | Projeto | Descrição | Stack | Demo |

@@ -6,6 +6,8 @@ tudo roda no cliente, com cálculo determinístico por regras.
 
 **[Ver demonstração ao vivo →](https://andre-tech2.github.io/portfolio/insight-sd/)**
 
+![Demonstração do app](../web/demo-insight-sd.gif)
+
 > Projeto de portfólio: os dados mostrados na demonstração são gerados sinteticamente (nomes, chamados e métricas
 > fictícios), criados na hora em que a página é aberta pela primeira vez no seu navegador — nada é enviado a
 > nenhum servidor. Esta é uma versão adaptada, sem o empacotamento Electron, de uma ferramenta que desenvolvi

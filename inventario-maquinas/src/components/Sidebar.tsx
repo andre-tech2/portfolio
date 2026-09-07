@@ -45,8 +45,8 @@ export default function Sidebar({
   }
 
   return (
-    <aside className="relative z-10 w-64 shrink-0 glass border-y-0 border-l-0 flex flex-col">
-      <div className="px-5 py-5 border-b border-surface-border/10">
+    <aside className="relative z-10 w-64 shrink-0 glass border-y-0 border-l-0 flex flex-col overflow-y-auto">
+      <div className="px-5 py-5 border-b border-surface-border/10 shrink-0">
         <div className="flex items-center gap-2.5">
           <Logo />
           <div className="min-w-0">
@@ -59,7 +59,7 @@ export default function Sidebar({
         </p>
       </div>
 
-      <nav className="flex-1 py-3">
+      <nav className="flex-1 py-3 min-h-0 overflow-y-auto">
         {items.map(({ page, label, icon: Icon }) => {
           const active = current === page
           return (
@@ -78,13 +78,13 @@ export default function Sidebar({
         })}
       </nav>
 
-      <div className="px-5 py-3 border-t border-surface-border/10">
+      <div className="px-5 py-3 border-t border-surface-border/10 shrink-0">
         <p className="text-sm font-semibold text-text-primary truncate">{usuario.nome}</p>
         <p className="text-[11px] text-text-muted truncate">{usuario.email}</p>
         <p className="text-[11px] text-text-muted mt-0.5">{PAPEL_LABEL[usuario.papel]}</p>
       </div>
 
-      <div className="px-3 py-3 border-t border-surface-border/10 space-y-1">
+      <div className="px-3 py-3 border-t border-surface-border/10 space-y-1 shrink-0">
         <button
           onClick={onTrocarSenha}
           className="w-full flex items-center gap-3 px-2 py-2.5 rounded-lg text-sm text-text-secondary hover:bg-surface-raised/40 hover:text-text-primary transition-colors"

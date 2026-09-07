@@ -6,6 +6,8 @@ mínimo e cada retirada vinculada a um número de chamado. Roda **100% no navega
 
 **[Ver demonstração ao vivo →](https://andre-tech2.github.io/portfolio/controle-estoque/)**
 
+![Demonstração do app](../web/demo-controle-estoque.gif)
+
 > Projeto de portfólio: esta é uma versão adaptada, sem o empacotamento Electron, de uma ferramenta que
 > desenvolvi para uso real como controle de estoque de TI. Nomes, e-mails e todos os dados cadastrados são
 > fictícios.

@@ -3,6 +3,8 @@
   "productName": "NovaTech Inventário",
   "version": "1.0.0",
   "description": "Controle de parque de máquinas (novas e antigas) com importação/exportação de planilha, papéis de usuário e trilha de remoções, 100% no navegador.",
+  "author": "André André <https://www.linkedin.com/in/andrelsandre>",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {

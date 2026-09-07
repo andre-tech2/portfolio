@@ -121,7 +121,7 @@ export default function Sidebar({
       </div>
 
       <div className="shrink-0 px-5 py-4 border-t border-surface-border/10 space-y-2">
-        <p className="text-[11px] text-text-muted">Projeto de portfólio de André</p>
+        <p className="text-[11px] text-text-muted">Projeto de portfólio de André André</p>
         <div className="flex items-center gap-3">
           <a
             href="https://www.linkedin.com/in/andrelsandre"

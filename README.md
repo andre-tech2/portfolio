@@ -29,7 +29,7 @@ subcaminho do GitHub Pages a cada push na branch `main`.
 
 ## Autor
 
-André — [LinkedIn](https://www.linkedin.com/in/andrelsandre) · [GitHub](https://github.com/andre-tech2)
+André André — [LinkedIn](https://www.linkedin.com/in/andrelsandre) · [GitHub](https://github.com/andre-tech2)
 
 ## Licença
 

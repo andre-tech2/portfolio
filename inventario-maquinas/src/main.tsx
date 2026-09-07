@@ -7,6 +7,12 @@ import './index.css'
 
 initTheme()
 
+console.info(
+  '%cNovaTech Inventário\n%cProjeto de portfólio desenvolvido por André André\nhttps://www.linkedin.com/in/andrelsandre · https://github.com/andre-tech2/portfolio',
+  'font-weight:bold;font-size:14px',
+  'font-weight:normal'
+)
+
 const rootEl = document.getElementById('root')!
 
 initApi()

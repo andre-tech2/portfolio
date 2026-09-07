@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  --page-plane: #fdfaf6;
+  --page-plane-2: #f5efe6;
+  --surface-1: #ffffff;
+  --surface-2: #f0e9dc;
+
+  --text-primary: #241c10;
+  --text-secondary: #5b5040;
+  --text-muted: #8a7f6c;
+
+  --gridline: #e6dcc9;
+  --baseline: #d8cbb2;
+  --border-hairline: rgba(36, 28, 16, 0.12);
+
+  /* Paleta categórica (validada, ordem fixa — skill dataviz) — reordenada pra laranja liderar,
+     reforçando a identidade visual própria deste projeto (diferente do roxo/ciano dos outros). */
+  --series-1: #d95926; /* orange */
+  --series-2: #3987e5; /* blue */
+  --series-3: #199e70; /* aqua */
+  --series-4: #c98500; /* yellow */
+  --series-5: #d55181; /* magenta */
+  --series-6: #008300; /* green */
+  --series-7: #9085e9; /* violet */
+  --series-8: #e66767; /* red */
+
+  --status-good: #0b8a3a;
+  --status-warning: #b45309;
+  --status-serious: #c2410c;
+  --status-critical: #b91c1c;
+
+  --brand: #c2410c;
+  --brand-dark: #9a3412;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page-plane: #120d08;
+  --page-plane-2: #1a140d;
+  --surface-1: #1f1811;
+  --surface-2: #291f14;
+
+  --text-primary: #fdf6ec;
+  --text-secondary: #d9c9ae;
+  --text-muted: #9c8f78;
+
+  --gridline: #35291a;
+  --baseline: #40331f;
+  --border-hairline: rgba(255, 255, 255, 0.1);
+
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+
+  --brand: #ea580c;
+  --brand-dark: #c2410c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--page-plane);
+  color: var(--text-primary);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: rgba(194, 65, 12, 0.25);
+}
+
+/* Card sólido, cantos mais retos e uma barra de destaque no topo — visual mais "industrial",
+   deliberadamente diferente do glassmorphism usado nos outros projetos do portfólio. */
+.solid-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-top: 3px solid var(--brand);
+  border-radius: 10px;
+}
+
+.text-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+  }
+}

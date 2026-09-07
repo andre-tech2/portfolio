@@ -62,6 +62,20 @@ jobs:
         working-directory: controle-estoque
         run: npm run build
 
+      - name: Instalar dependências — Fretes
+        working-directory: fretes
+        run: npm install
+
+      - name: Rodar testes — Fretes
+        working-directory: fretes
+        run: npm test
+
+      - name: Build — Fretes
+        working-directory: fretes
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /portfolio/fretes
+
       - name: Montar site
         run: |
           mkdir -p _site
@@ -72,6 +86,8 @@ jobs:
           cp -r insight-sd/out/. _site/insight-sd/
           mkdir -p _site/controle-estoque
           cp -r controle-estoque/dist/. _site/controle-estoque/
+          mkdir -p _site/fretes
+          cp -r fretes/out/. _site/fretes/
 
       - uses: actions/upload-pages-artifact@v3
         with:

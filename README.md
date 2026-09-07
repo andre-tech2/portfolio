@@ -13,6 +13,7 @@ empresa ou de terceiros aparece neste repositório.
 | [Inventário de Máquinas](./inventario-maquinas) | Controle de parque de máquinas com papéis de usuário, importação/exportação de planilha e trilha de auditoria — SQLite rodando 100% no navegador. | React, TypeScript, Tailwind, sql.js | [abrir](https://andre-tech2.github.io/portfolio/inventario-maquinas/) |
 | [Insight SD](./insight-sd) | Dashboard de análise de Service Desk estilo Power BI — SLA, ranking de agentes, backlog, recomendações automáticas por regras. Dados de demonstração gerados na hora. | Next.js, React, TypeScript, Recharts | [abrir](https://andre-tech2.github.io/portfolio/insight-sd/) |
 | [Controle de Estoque](./controle-estoque) | Controle de estoque de equipamentos multi-sede, com movimentações em lote, cancelamento auditável e alerta de estoque mínimo — SQLite rodando 100% no navegador. | React, TypeScript, Tailwind, sql.js | [abrir](https://andre-tech2.github.io/portfolio/controle-estoque/) |
+| [Fretes](./fretes) | Painel de desempenho de transportadoras — % no prazo, taxa de ocorrência, custo de frete e recomendações automáticas por regras. Generaliza a engine do Insight SD para o setor de logística. | Next.js, React, TypeScript, Recharts | [abrir](https://andre-tech2.github.io/portfolio/fretes/) |
 
 Novos projetos serão adicionados como novas pastas neste mesmo repositório.
 
@@ -24,6 +25,7 @@ portfolio/
 ├── inventario-maquinas/    # projeto 1: inventário de máquinas
 ├── insight-sd/              # projeto 2: dashboard de Service Desk
 ├── controle-estoque/        # projeto 3: controle de estoque multi-sede
+├── fretes/                  # projeto 4: desempenho de transportadoras
 ├── .github/workflows/      # build + deploy automático para GitHub Pages
 ```
 

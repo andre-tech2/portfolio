@@ -46,6 +46,18 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /portfolio/insight-sd
 
+      - name: Instalar dependências — Controle de Estoque
+        working-directory: controle-estoque
+        run: npm install
+
+      - name: Rodar testes — Controle de Estoque
+        working-directory: controle-estoque
+        run: npm test
+
+      - name: Build — Controle de Estoque
+        working-directory: controle-estoque
+        run: npm run build
+
       - name: Montar site
         run: |
           mkdir -p _site
@@ -54,6 +66,8 @@ jobs:
           cp -r inventario-maquinas/dist/. _site/inventario-maquinas/
           mkdir -p _site/insight-sd
           cp -r insight-sd/out/. _site/insight-sd/
+          mkdir -p _site/controle-estoque
+          cp -r controle-estoque/dist/. _site/controle-estoque/
 
       - uses: actions/upload-pages-artifact@v3
         with:

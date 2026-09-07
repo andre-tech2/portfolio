@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 255 255 255;
+  --color-surface: 247 248 250;
+  --color-surface-raised: 238 240 244;
+  --color-surface-border: 226 228 234;
+  --color-text-primary: 20 21 26;
+  --color-text-secondary: 83 86 95;
+  --color-text-muted: 132 135 143;
+  --color-ok-text: 11 122 52;
+  --color-warn-text: 146 64 14;
+  --color-danger-text: 185 28 28;
+  --color-chart-muted: 199 202 209;
+  --scrollbar-thumb: #d5d8de;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: 10 10 11;
+  --color-surface: 21 21 23;
+  --color-surface-raised: 27 28 31;
+  --color-surface-border: 38 39 43;
+  --color-text-primary: 245 245 246;
+  --color-text-secondary: 155 155 164;
+  --color-text-muted: 108 108 117;
+  --color-ok-text: 107 255 80;
+  --color-warn-text: 245 158 11;
+  --color-danger-text: 239 68 68;
+  --color-chart-muted: 58 59 64;
+  --scrollbar-thumb: #2c2d31;
+}
+
+body {
+  margin: 0;
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-text-primary));
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+.badge-ok {
+  @apply bg-ok/15 text-ok-text;
+}
+.badge-baixo {
+  @apply bg-warn/15 text-warn-text;
+}
+.badge-critico {
+  @apply bg-danger/15 text-danger-text;
+}
